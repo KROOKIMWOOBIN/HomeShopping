@@ -1,12 +1,11 @@
 package HomeShopping.HomeShopping.repository;
 
-import HomeShopping.HomeShopping.domain.MemberDTO;
-
 import java.util.List;
 import java.util.Optional;
+import HomeShopping.HomeShopping.domain.Member;
 
 public interface MemberRepository {
-    MemberDTO save(MemberDTO member);
-    Optional<MemberDTO> findByPassword(Long password);
-    List<MemberDTO> findAll();
+    Member save(Member member);
+    public Optional<Member> findByEmail(String email);
+    List<Member> findAll();
 }
