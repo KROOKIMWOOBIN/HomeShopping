@@ -15,13 +15,14 @@ function SignupPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(`handlesubmit. ${formData}`);
         try {
             const response = await axios.post(
                 // TO DO: 이후 api 수정
                 'http://localhost:8080/members/new',
                 formData
             );
-            console.log(response.data);
+            console.log(`good: ${response.data}`);
         } catch (error) {
             console.error('Error during signup:', error);
         }
