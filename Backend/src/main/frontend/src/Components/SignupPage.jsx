@@ -3,8 +3,8 @@ import axios from 'axios';
 
 function SignupPage() {
     const [formData, setFormData] = useState({
-        id: '',
-        pw: '',
+        name: '',
+        password: '',
         email: '',
     });
 
@@ -15,7 +15,7 @@ function SignupPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(`handlesubmit. ${formData}`);
+        console.log(`handlesubmit. ${JSON.stringify(formData)}`);
         try {
             const response = await axios.post(
                 // TO DO: 이후 api 수정
