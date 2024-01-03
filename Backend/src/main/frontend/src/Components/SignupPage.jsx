@@ -31,7 +31,7 @@ function SignupPage() {
     return (
         <>
             <h1>회원가입 페이지</h1>
-            <form action="/members/new" method="post">
+            <form action="http://localhost:8080/members/new" method="post">
                 id:
                 <input
                     type="text"
