@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 function SignupPage() {
     const [formData, setFormData] = useState({
@@ -13,25 +13,25 @@ function SignupPage() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log(`handlesubmit. ${JSON.stringify(formData)}`);
-        try {
-            const response = await axios.post(
-                // TO DO: 이후 api 수정
-                'http://localhost:8080/members/new',
-                formData
-            );
-            console.log(`good: ${response.data}`);
-        } catch (error) {
-            console.error('Error during signup:', error);
-        }
-    };
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     console.log(`handlesubmit. ${JSON.stringify(formData)}`);
+    //     try {
+    //         const response = await axios.post(
+    //             // TO DO: 이후 api 수정
+    //             'http://localhost:8080/members/new',
+    //             formData
+    //         );
+    //         console.log(`good: ${response.data}`);
+    //     } catch (error) {
+    //         console.error('Error during signup:', error);
+    //     }
+    // };
 
     return (
         <>
             <h1>회원가입 페이지</h1>
-            <form onSubmit={handleSubmit}>
+            <form action="/members/new" method="post">
                 id:
                 <input
                     type="text"
