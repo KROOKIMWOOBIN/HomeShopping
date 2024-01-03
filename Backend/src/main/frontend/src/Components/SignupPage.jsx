@@ -18,7 +18,7 @@ function SignupPage() {
         try {
             const response = await axios.post(
                 // TO DO: 이후 api 수정
-                'http://localhost:8080/api/users/signup',
+                'http://localhost:8080/members/new',
                 formData
             );
             console.log(response.data);
@@ -34,15 +34,15 @@ function SignupPage() {
                 id:
                 <input
                     type="text"
-                    name="id"
-                    placeholder="id"
+                    name="name"
+                    placeholder="name"
                     onChange={handleInputChange}
                 />
                 pw:
                 <input
                     type="password"
-                    name="pw"
-                    placeholder="pw"
+                    name="password"
+                    placeholder="password"
                     onChange={handleInputChange}
                 />
                 email:

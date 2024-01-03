@@ -28,7 +28,7 @@ public class MemberService {
 
     // 중복 회원가입 확인
     private void validateDuplicateMember(Member member){
-        memberRepository.findByEmail(member.getEmail())
+        memberRepository.findById(member.getId())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
